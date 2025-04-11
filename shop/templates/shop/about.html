@@ -1,0 +1,160 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/about.css'%}"
+    <script src="{% static 'js/animations.js' %}" defer></script>
+    <title>about us --Omotayo scent & Accessories</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+          <a href="/" class="navbar-brand">OMOTAYO</a>
+  
+          <!-- Hamburger Button -->
+          <button class="hamburger" id="hamburger">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+  
+          <!-- Navigation Menu -->
+          <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="/product" class="nav-link">Products</a></li>
+            
+            <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <section class="about-us" id="about">
+        <div class="about-container">
+          <!-- Section Header -->
+          <div class="about-header">
+            <h2>About Omotayo Scent & Accessories</h2>
+            <p>
+              Welcome to Omotayo Scent & Accessories, where we blend tradition and luxury into every bottle. We are a brand born from a passion for high-end fragrances and African excellence, bringing you the finest aromas inspired by Saudi Arabian royalty and the richness of Nigerian heritage.
+            </p>
+          </div>
+          
+          <!-- Our Mission -->
+          <div class="about-mission">
+            <h3>Our Mission</h3>
+            <p>
+              Our mission is to redefine what it means to wear a fragrance. We believe perfume is not just a scent, but a statement of who you are — your elegance, your strength, and your identity. At Omotayo, every fragrance is crafted to express a story. A story of luxury, culture, and timeless beauty.
+            </p>
+          </div>
+      
+          <!-- Our Philosophy -->
+          <div class="about-philosophy">
+            <h3>Our Philosophy</h3>
+            <p>
+              Luxury is in the details. From the selection of the finest ingredients to the artisanal craftsmanship of every bottle, we believe in offering you not just a product, but an experience. Our perfumes are designed to captivate, with carefully curated notes that linger, making every moment unforgettable.
+            </p>
+            <p>
+              We are committed to sustainability and responsible sourcing, ensuring that every scent you wear supports both the environment and the people behind it. Luxury with a conscience — that's the Omotayo promise.
+            </p>
+          </div>
+      
+          <!-- Our Craftsmanship -->
+          <div class="about-craftsmanship">
+            <h3>Our Craftsmanship</h3>
+            <p>
+              Each bottle of Omotayo Scent & Accessories is a labor of love, carefully curated from the best natural ingredients sourced from across the globe. We collaborate with top perfumers to create distinctive, rich fragrances that tell a story of elegance, culture, and refinement.
+            </p>
+            <p>
+              Our commitment to perfection is reflected in our packaging. Designed to exude sophistication, each bottle features sleek, luxurious designs with fine gold accents — a true reflection of the premium fragrance within.
+            </p>
+          </div>
+      
+          <!-- Customer Testimonials Section -->
+          <div class="about-testimonials">
+            <h3>What Our Customers Say</h3>
+            <div class="testimonial">
+              <p>
+                "Omotayo’s perfumes are more than just scents; they are an experience. Every time I wear them, I feel like royalty." - Adesuwa A.
+              </p>
+            </div>
+            <div class="testimonial">
+              <p>
+                "The fragrance lasts all day and the compliments never stop. I’m never buying from anyone else again!" - Tunde B.
+              </p>
+            </div>
+            <div class="testimonial">
+              <p>
+                "I've never had a perfume make such an impression. The scent lingers without being overpowering. Absolutely divine." - Ngozi C.
+              </p>
+            </div>
+          </div>
+      
+          <!-- Call to Action -->
+          <div class="about-cta">
+            <h3>Ready to Experience Omotayo?</h3>
+            <p>
+              Explore our collection of signature perfumes and discover the scent that speaks to you. Whether it's for a special occasion or an everyday luxury, we promise you an unforgettable experience.
+            </p>
+            <a href="/product" class="about-btn">Explore Our Collection</a>
+          </div>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-brand">
+            <h3>Omotayo Scent & Accessories</h3>
+            <p>Luxury. Elegance. Identity.</p>
+          </div>
+      
+          <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/product">Products</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+          </div>
+      
+          <div class="footer-contact">
+
+            <p>Phone: +2347036320621</p>
+          </div>
+        </div>
+      
+        <div class="footer-bottom">
+          <p>&copy; 2025 Omotayo Scent & Accessories. All Rights Reserved.</p>
+        </div>
+      </footer>
+  
+
+    
+
+
+    
+
+    <script>
+
+      document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        // Toggle menu when hamburger is clicked
+        hamburger.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking a nav link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    });
+    
+        AOS.init({ duration: 2000 });
+       
+    </script>
+</body>
+</html>

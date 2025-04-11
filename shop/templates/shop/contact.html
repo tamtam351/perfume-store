@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Contact Us - Omotayo Scent & Accessories</title>
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}" />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  </head>
+  <body>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+          <a href="/" class="navbar-brand">OMOTAYO</a>
+  
+          <!-- Hamburger Button -->
+          <button class="hamburger" id="hamburger">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+  
+          <!-- Navigation Menu -->
+          <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="/product" class="nav-link">Products</a></li>
+            
+            <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    
+
+      <form action="https://formspree.io/f/xanevwdn" method="POST" class="contact-form">
+        <label for="email">Your email:</label>
+        <input type="email" name="email" id="email" placeholder="Enter your email" required>
+        
+        <label for="message">Your message:</label>
+        <textarea name="message" id="message" placeholder="Write your message" required></textarea>
+        
+        <button type="submit" class="submit-btn">Send</button>
+      </form>
+
+
+
+
+  
+      
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        // Toggle menu when hamburger is clicked
+        hamburger.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking a nav link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    });
+      
+      AOS.init({ duration: 2000 });
+      
+    </script>
+  </body>
+</html>

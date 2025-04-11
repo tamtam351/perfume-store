@@ -1,0 +1,260 @@
+{% load static %} {% load custom_filters %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Omotayo Scent & Accessories - Luxury Perfumes</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- GSAP, Typed.js, and Three.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"
+      defer
+    ></script>
+
+    <!-- Custom Scripts -->
+    <script src="{% static 'js/animations.js' %}" defer></script>
+  </head>
+  <body>
+    <!-- Luxury Navbar -->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="/" class="navbar-brand">OMOTAYO</a>
+
+        <!-- Hamburger Button -->
+        <button class="hamburger" id="hamburger">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
+        <!-- Navigation Menu -->
+        <ul class="nav-menu" id="nav-menu">
+          <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="/product" class="nav-link">Products</a></li>
+          
+          <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section with 3D Perfume -->
+    <header class="hero">
+      <div data-aos="fade-down-right">
+        <h3>Take <span>Perfume</span> <br />In Style</h3>
+        <p>
+          It's a long established fact that we are <span id="typed-text"></span>
+        </p>
+      </div>
+    </header>
+    <br />
+    <br />
+
+    <main>
+      <div>
+        <h2>Famous Brands</h2>
+        <br />
+
+        <div class="overall">
+          <div class="brand-logos">
+            <img src="{% static './images/brand-1.png' %}" data-aos="zoom-in" />
+
+            <img src="{% static './images/brand-2.png' %}" data-aos="zoom-in" />
+
+            <img src="{% static './images/brand-3.png' %}" data-aos="zoom-in" />
+
+            <img src="{% static './images/brand-4.png' %}" data-aos="zoom-in" />
+          </div>
+        </div>
+      </div>
+    </main>
+    <br />
+
+    <section class="counter-section">
+      <div class="counter-container">
+        <div class="counter-box">
+          <i class="fas fa-smile"></i>
+          <h2
+            class="purecounter"
+            data-purecounter-start="0"
+            data-purecounter-end="65"
+            data-purecounter-duration="3"
+          >
+            0
+          </h2>
+          <p>Happy Customers</p>
+        </div>
+        <div class="counter-box">
+          <i class="fas fa-shopping-bag"></i>
+          <h2
+            class="purecounter"
+            data-purecounter-start="0"
+            data-purecounter-end="80"
+            data-purecounter-duration="3"
+          >
+            0
+          </h2>
+          <p>Products Sold</p>
+        </div>
+        <div class="counter-box">
+          <i class="fas fa-gem"></i>
+          <h2
+            class="purecounter"
+            data-purecounter-start="0"
+            data-purecounter-end="30"
+            data-purecounter-duration="3"
+          >
+            0
+          </h2>
+          <p>Luxury Collections</p>
+        </div>
+        <div class="counter-box">
+          <i class="fas fa-store"></i>
+          <h2
+            class="purecounter"
+            data-purecounter-start="0"
+            data-purecounter-end="1"
+            data-purecounter-duration="3"
+          >
+            0
+          </h2>
+          <p>Store Locations</p>
+        </div>
+      </div>
+    </section>
+    <section class="container">
+      {% for perfume in perfumes %}
+      <div class="perfume-card" data-aos="zoom-in">
+        <img src="{{ perfume.image.url }}" alt="{{ perfume.name }}" />
+        <h3>{{ perfume.name }}</h3>
+        <p>₦{{ perfume.price }}</p>
+        <p>{{ perfume.description }}</p>
+        <button class="order-btn">
+          <a
+            class="btn"
+            href="https://wa.me/2347036320621?text=Hello!%20I%20would%20like%20to%20order%20the%20perfume:%20{{ perfume.name }}.%0AHere%20is%20the%20image:%20{% absolute_url request perfume.image.url %}"
+            target="_blank"
+          >
+            Order via WhatsApp
+          </a>
+        </button>
+      </div>
+      {% endfor %}
+    </section>
+    
+    
+    
+
+    <section class="testimonials" id="testimonials">
+      <h2>What Our Customers Say</h2>
+      <div class="testimonial-container">
+        <div class="testimonial-track">
+          <div class="testimonial-card">
+            <p>"The fragrance lasted all day. It felt like pure luxury — and the packaging? Impeccable!"</p>
+            <h4>- Adesuwa A.</h4>
+          </div>
+          <div class="testimonial-card">
+            <p>"I’ve never received this many compliments before. Omotayo Scent is the truth!"</p>
+            <h4>- Tunde B.</h4>
+          </div>
+          <div class="testimonial-card">
+            <p>"As a perfume lover, I can confidently say this is top-tier. Delivery was fast too."</p>
+            <h4>- Ngozi C.</h4>
+          </div>
+          <div class="testimonial-card">
+            <p>"Omotayo’s scents feel like royalty. Definitely made for kings and queens."</p>
+            <h4>- Emeka D.</h4>
+          </div>
+          <div class="testimonial-card">
+            <p>"I ordered for myself and my mum — we both loved it. Smells like wealth and elegance."</p>
+            <h4>- Zainab E.</h4>
+          </div>
+          <div class="testimonial-card">
+            <p>"Smells classy, feels expensive, and it actually lasts! Highly recommend."</p>
+            <h4>- Obinna F.</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+     
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <h3>Omotayo Scent & Accessories</h3>
+          <p>Luxury. Elegance. Identity.</p>
+        </div>
+    
+        <div class="footer-links">
+          <a href="/">Home</a>
+          <a href="/product">Products</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+        </div>
+    
+        <div class="footer-contact">
+          <p>Phone: +2347036320621</p>
+        </div>
+      </div>
+    
+      <div class="footer-bottom">
+        <p>&copy; 2025 Omotayo Scent & Accessories. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    
+    
+
+
+
+    <script>
+      AOS.init({
+        duration: 3000, // All animations will last 2 seconds
+      });
+      alert("the full list of perfumes could be viewed in the products tab this could be accessed by clicking the link")
+      new PureCounter();
+      document.addEventListener("DOMContentLoaded", function () {
+        var typed = new Typed("#typed-text", {
+          strings: [
+            "Masters of Fine Fragrance.",
+            "Curators of Luxury Scents.",
+            "Purveyors of Timeless Elegance.",
+            "Crafted for the Refined.",
+            "Champions of Opulent Aromas.",
+            "Designers of the Perfect Scent.",
+          ],
+          typeSpeed: 80,
+          backSpeed: 50,
+          startDelay: 500,
+          backDelay: 1000,
+          loop: true,
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        gsap.from(".hero-content h3", {
+          opacity: 0,
+          y: 50,
+          duration: 1,
+          ease: "power2.out",
+        });
+        gsap.from(".hero-content p", {
+          opacity: 0,
+          y: 50,
+          duration: 1,
+          ease: "power2.out",
+          delay: 0.3,
+        });
+      });
+
+    </script>
+  </body>
+</html>

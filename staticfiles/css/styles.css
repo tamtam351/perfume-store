@@ -1,0 +1,317 @@
+/* Base Styles */
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Bad+Script&family=Caveat:wght@400..700&family=Hubot+Sans:ital,wght@0,200..900;1,200..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Macondo&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Rubik+Vinyl&family=Smooch+Sans:wght@100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevents horizontal overflow */
+
+    padding-top: 70px; /* Account for fixed navbar */
+}
+
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(28, 28, 28, 0.4); /* Deep Charcoal Black with 40% transparency */
+    backdrop-filter: blur(10px); /* Smooth blur effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for elegance */
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.navbar-brand {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Navigation Menu */
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    margin-left: 2rem;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #3498db;
+}
+
+/* Hamburger Button */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: relative;
+    z-index: 1010;
+}
+
+.hamburger-line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Active/Hamburger State */
+.hamburger.active .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: #000; /* Deep Charcoal Black with 40% transparency */
+        
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.3s ease;
+        padding-top: 70px;
+    }
+    
+    .nav-menu.active {
+        right: 0;
+    }
+    
+    .nav-item {
+        margin: 1.5rem 0;
+    }
+}
+.hero{
+    width: 100vw;
+    height: 70vh;
+    background-size: cover;
+    background-repeat: none;
+    background-image: url(../images/slider2.jpg);
+}
+.hero{
+    font-family: "Jost", sans-serif;
+    color: #fff;
+    display: flex;
+    justify-content:flex-start;
+    padding-left: 50px;
+    align-items: center;
+    
+  }
+
+
+.hero h3{
+    font-weight: 600;
+    line-height: 80px;
+    color: #fff;
+    font-size:75px ;
+}
+
+ .hero span{
+    color: #f03637;
+}
+
+.hero p{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+
+  main{
+    font-family: "Jost", sans-serif;
+    color: #000;
+    font-size: 22px;
+    text-align: center;
+  }
+  .overall{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+ 
+  
+  .brand-logos {
+    display: flex;
+    flex-direction: row;  /* Space between logos */
+          /* Adds some space between the heading and the logos */
+  }
+  
+
+  .counter-section {
+    background: linear-gradient(to right, #8a5a44, #d4af37); /* Luxurious Gold Theme */
+    padding: 50px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.counter-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.counter-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.counter-box:hover {
+    transform: scale(1.05);
+}
+
+.counter-box i {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #f4c542;
+}
+
+.counter-box h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.counter-box p {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .counter-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Container Layout */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    justify-content: center;
+    background-color: #fff;
+  }
+  
+  /* Individual Perfume Card */
+  .perfume-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+  }
+  
+  /* Hover Effect */
+  .perfume-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Perfume Image */
+  .perfume-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .perfume-card:hover img {
+    transform: scale(1.05);
+  }
+  
+  /* Perfume Name */
+  .perfume-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 10px 0;
+    color: #333;
+  }
+  
+  /* Perfume Price */
+  .perfume-card p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #d32f2f;
+    margin-bottom: 10px;
+  }
+  
+  /* Order Button */
+  .order-btn {
+    display: inline-block;
+    margin-top: 10px;
+    border: none;
+    background: #ff5252;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .order-btn:hover {
+    background: #d32f2f;
+  }
+  
+  /* WhatsApp Button Link */
+  .order-btn .btn {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
