@@ -1,3 +1,22 @@
+/* Prevent dark mode overrides */
+@media (prefers-color-scheme: dark) {
+  html, body, * {
+    background-color: white !important;
+    color: black !important;
+    border-color: black !important;
+    box-shadow: none !important;
+  }
+}
+
+/* Also explicitly set light mode as default */
+html {
+  color-scheme: light !important;
+}
+
+body {
+  background-color: white !important;
+  color: black !important;
+}
 
   .navbar {
     position: fixed;
