@@ -50,6 +50,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # add this right after SecurityMiddleware
+    'django.middleware.security.SecurityMiddleware',
 ]
 
 ROOT_URLCONF = 'perfume_store.urls'
@@ -141,3 +143,9 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # Where your static files
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Where collectstatic will store files
 
 ALLOWED_HOSTS = ['perfume-store-697z.onrender.com', 'localhost', '127.0.0.1']
+
+
+# settings.py
+
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
