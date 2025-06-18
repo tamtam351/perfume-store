@@ -21,9 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'shop',
-    'cloudinary',
-    'cloudinary_storage',
-    'django_cleanup',  # auto-delete unused media (Cloudinary)
+
 ]
 
 MIDDLEWARE = [
@@ -86,12 +84,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Cloudinary Media Storage (Cloud-only — no local media used)
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dix51rfcc',
-    'API_KEY': '445213835191787',
-    'API_SECRET': 'JLlmFhY-o9ALSiy0pkWjSIRNstI',
-}
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 
 # Default auto field
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
