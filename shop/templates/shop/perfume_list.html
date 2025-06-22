@@ -23,29 +23,27 @@
     <script src="{% static 'js/animations.js' %}" defer></script>
   </head>
   <body>
-    <!-- Luxury Navbar -->
-    <nav class="navbar">
-      <div class="navbar-container">
-        <a href="/" class="navbar-brand">OMOTAYO</a>
+     <nav class="navbar">
+        <div class="navbar-container">
+          <a href="/" class="navbar-brand">OMOTAYO</a>
+  
+          <!-- Hamburger Button -->
+          <button class="hamburger" id="hamburger">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+  
+          <!-- Navigation Menu -->
+          <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="/product/" class="nav-link">Products</a></li>
 
-        <!-- Hamburger Button -->
-        <button class="hamburger" id="hamburger">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </button>
-
-        <!-- Navigation Menu -->
-        <ul class="nav-menu" id="nav-menu">
-          <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="/product" class="nav-link">Products</a></li>
-          
-          <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-
+            <li class="nav-item"><a href="/about/" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="/contact/" class="nav-link">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
     <!-- Hero Section with 3D Perfume -->
     <header class="hero">
       <div data-aos="fade-down-right">
